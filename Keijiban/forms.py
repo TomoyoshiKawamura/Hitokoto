@@ -2,7 +2,7 @@ from django import forms
 from .models import Hitokoto
 
 
-class HitokotoForm(forms.Form):
+class HitokotoForm(forms.ModelForm):
     class Meta:
         model = Hitokoto
-        exclude = ('created_at',)
+        fields = ('name', 'comment')

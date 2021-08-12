@@ -3,6 +3,7 @@ from django.views.generic import ListView, DetailView, CreateView
 from .models import Hitokoto
 from django.urls import reverse
 from .forms import HitokotoForm
+from django.urls import reverse_lazy
 
 
 class Message_List(ListView):
@@ -21,4 +22,4 @@ class Message_Post(CreateView):
     form_class = HitokotoForm
     template_name = 'Hitokoto_post.html'
     fields = ('name', 'comment',)
-    success_url = '/'
+    success_url = reverse_lazy('comments')
