@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>コメント一覧</title>
+</head>
+<body>
+    <h1>コメント一覧</h1>
+    {% for comment in object_list %}
+        <p><a href="comments/{{ comment.id }}">{{ comment.name }}</a>/{{ comment.comment }}</p>
+    {% endfor %}
+</body>
+</html>
